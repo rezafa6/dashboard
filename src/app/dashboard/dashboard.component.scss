@@ -1,0 +1,16 @@
+.dashboard-content-wrapper {
+    margin-top: 40px ;
+}
+
+.export-btn {
+    width: 97.8%;
+    margin: 25px 0;
+    button {
+        background-color: transparent;
+        font-size: 14px;
+        color: #6C6C6C;
+        &:hover {
+            opacity: 0.6;
+        }
+    }
+}

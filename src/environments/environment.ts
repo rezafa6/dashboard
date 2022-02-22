@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  iconPath: '/assets/icons/',
+  baseURL:'http://51.89.107.228:1376/ui/mock'
 };
 
 /*

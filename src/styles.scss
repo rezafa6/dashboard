@@ -1,1 +1,138 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* Importing Bootstrap SCSS file. */
+@import "~bootstrap/scss/bootstrap";
+
+/* Importing Datepicker SCSS file. */
+@import "~ngx-bootstrap/datepicker/bs-datepicker";
+
+//@import '/src/assets/fonts/font-face.scss' ;
+@font-face {
+	font-family: IRANSansX;
+	font-style: normal;
+	font-weight: 100; 
+	src:url('./assets/fonts/woff/IRANSansX-Thin.woff') format('woff'),   
+	url('/src/assets/fonts/woff/IRANSansX-Thin.woff2') format('woff2'),   ;		
+}
+
+@font-face {
+	font-family: IRANSansX;
+	font-style: normal;
+	font-weight: 200;
+	src: url('./assets/fonts/woff/IRANSansX-UltraLight.woff') format('woff'),   
+	url('/src/assets/fonts/woff2/IRANSansX-UltraLight.woff2') format('woff2');	
+}
+
+@font-face {
+	font-family: IRANSansX;
+	font-style: normal;
+	font-weight: 300;
+	src: url('./assets/fonts/woff/IRANSansX-light.woff') format('woff'),   
+	url('/src/assets/fonts/woff2/IRANSansX-light.woff2') format('woff2');		 
+}
+
+@font-face {
+	font-family: IRANSansX;
+	font-style: normal;
+	font-weight: 500;
+	src: url('./assets/fonts/woff/IRANSansX-Medium.woff') format('woff'),   
+	url('/src/assets/fonts/woff2/IRANSansX-medium.woff2') format('woff2');		 
+}
+
+@font-face {
+	font-family: IRANSansX;
+	font-style: normal;
+	font-weight: 600;
+	src: url('./assets/fonts/woff/IRANSansX-demibold.woff') format('woff'),   
+	url('/src/assets/fonts/woff2/IRANSansX-demibold.woff2') format('woff2');	 
+}
+
+@font-face {
+	font-family: IRANSansX;
+	font-style: normal;
+	font-weight: 800;
+	src: url('./assets/fonts/woff/IRANSansX-extrabold.woff') format('woff'),   
+	url('/src/assets/fonts/woff2/IRANSansX-extrabold.woff2') format('woff2');		 
+}
+
+@font-face {
+	font-family: IRANSansX;
+	font-style: normal;
+	font-weight: 900;
+	src: url('./assets/fonts/woff/IRANSansX-black.woff') format('woff'),   
+	url('/src/assets/fonts/woff2/IRANSansX-black.woff2') format('woff2');		 
+}
+
+@font-face {
+	font-family: IRANSansX;
+	font-style: normal;
+	font-weight: bold;
+	src: url('./assets/fonts/woff/IRANSansX-bold.woff') format('woff'),   
+	url('/src/assets/fonts/woff2/IRANSansX-bold.woff2') format('woff2');	 
+}
+// general styles
+body , html {
+    height: 100%;
+    background-color: #e5e5e5 ;
+	overflow-x: hidden;
+}
+body {
+	margin: 0;
+	padding: 0;
+	text-align: right !important;
+	direction: rtl !important;
+    font-family: IranSansX ;
+    font-family: 'IranSansX' ;
+	-moz-font-feature-settings: "ss02" !important;
+    -webkit-font-feature-settings: "ss02" !important;
+    font-feature-settings: "ss02" !important; 
+}
+
+// general classes
+a:hover {
+	text-decoration: none;
+}
+.none-padding {
+	padding: 0 !important;
+}
+.cursor-p {
+	cursor: pointer;
+}
+
+.cursor-d {
+	cursor: default;
+}
+.text-muted {
+	color: #949494 !important; 
+}
+
+.bg-orange {
+	background-color: #FCE9E6 ;
+}
+.text-orange {
+	color: #FF5C0B ;
+}
+.text-black {
+	color: #292D32;
+}
+.shadow-x {
+	box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.1);
+}
+.text-green {
+	color: #00A53C;
+}
+.text-red {
+	color: #FB1E1E;
+}
+.font-11 {
+	font-size: 11px;
+}
+.font-12 {
+	font-size: 12px;
+}
+.font-13 {
+	font-size: 13px;
+}
+.font-14 {
+	font-size: 14px;
+}

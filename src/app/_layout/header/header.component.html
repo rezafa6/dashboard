@@ -1,0 +1,41 @@
+<header>
+    <div class="header-container d-flex justify-content-between align-items-center flex-wrap">
+        <!-- #start right side -->
+        <div class="right-side d-flex flex-wrap">
+            <!-- start header title -->
+            <div class="head-item header-title text-center">
+                <h2 class="font-weight-normal position-relative"> سرزمین کودک </h2>
+            </div>
+            <!-- end header title -->
+
+            <!-- #start profile  -->
+            <div class="head-item header-profile d-flex">
+                <img [src]="iconPath + 'male-avatar.svg'" width="40px" alt="avatar-image">
+                <div class="profile-titles cursor-p">
+                    <span>
+                        <strong> رضا فتح الهی </strong>
+                        <img [src]="iconPath + 'arrow-down.svg'" width="21px" alt="avatar-image">
+                    </span>
+                    <br>
+                    <span class="text-muted">تیم فنی</span>
+                </div>
+            </div>
+            <!-- #end profile  -->
+        </div>
+        <!-- #end right side -->
+
+        <!-- #start left section -->
+        <div class="left-side d-flex align-self-start pt-2">
+           <div class="head-item">
+            <button class="border-0">
+                <img [src]="iconPath + 'notification.svg'" width="24px" alt="notification-icon">
+            </button>
+
+            <button class="border-0">
+                <img [src]="iconPath + 'logout.svg'" width="24px" alt="notification-icon">
+            </button>
+           </div>
+        </div>
+        <!-- #end left section -->
+    </div>
+</header>
