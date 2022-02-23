@@ -143,22 +143,35 @@ a:hover {
 	font-size: 14px;
 }
 
-/* width */
 ::-webkit-scrollbar {
 	width: 4px;
   }
-  
-  /* Track */
   ::-webkit-scrollbar-track {
 	background: #f1f1f1; 
   }
    
-  /* Handle */
   ::-webkit-scrollbar-thumb {
 	background: #FF5C0B; 
   }
-  
-  /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
 	background: #888; 
   }
+  .org-circle {
+    height: 10px;
+    width: 10px;
+    background-color: #FF5C0B;
+	display: block;
+	margin-top: 4px;
+}
+.org-circle::before {
+	content: 'اشتراکی';
+	position: absolute;
+	font-size: 11px;
+	top : 15px;
+	right: 4px;
+
+}
+.black-circle {
+	@extend .org-circle;
+	background-color: #1a1a1a ;
+}

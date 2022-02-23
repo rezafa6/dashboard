@@ -62,13 +62,13 @@ export class DailyChartComponent implements OnInit {
           "fontFamily" : 'IranSansX' , 'color' : '#263238'
         }
       },
-      legend: {
-        align: 'center',
-        verticalAlign: 'bottom',
-        itemStyle : {
-          "display": "none"
-        }
-      },
+      // legend: {
+      //   align: 'center',
+      //   verticalAlign: 'bottom',
+      //   itemStyle : {
+      //     "display": "none"
+      //   }
+      // },
       subtitle: {
         align: 'right',
         text: 'زیر عنوان',
