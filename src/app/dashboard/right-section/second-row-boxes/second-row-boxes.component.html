@@ -1,0 +1,110 @@
+<div class="d-flex main-window-wrapper">
+
+  <!-- #start right window -->
+  <div class="right-windows time-cosumes windows bg-white shadow-x p-3 ">
+
+    <div class="window-header">
+      <!-- icon -->
+      <img class="mb-3" [src]="iconPath + 'clock.svg'" width="32px">
+      <!-- title -->
+      <span class="text-black font-12 mb-2 d-block">متوسط زمان صرف شده</span>
+      <!-- details -->
+      <div class="d-flex ">
+        <span class="mb-2 font-14 d-block">
+          {{timeConsume?.total?.users}} کاربر /
+          {{timeConsume?.total?.time + ' دقیقه '}}
+        </span>
+        <span [ngClass]="[timeConsume?.total?.change < 0 ? 'text-red' : 'text-green']" class="mr-3 mt-1 font-11 ">
+          {{timeConsume?.total?.change.toString().replace('-' , '') | splitDigit }} دقیقه
+          <img [src]="timeConsume?.total?.change  < 0 ? iconPath + 'down.svg' : iconPath + 'up.svg' " class="pr-1">
+        </span>
+      </div>
+    </div>
+
+    <div class="window cursor-d ">
+      <!-- icon -->
+      <img [src]="iconPath + 'catagroy.svg'" width="32px">
+      <!-- title -->
+      <div class="text-black window-title"> هر دسته‌بندی </div>
+      <!-- details -->
+      <div class="window-details">
+        <span class="text-black font-13"> {{timeConsume?.tag?.time | splitDigit}} دقیقه</span>
+        <span [ngClass]="[timeConsume?.tag?.change < 0 ? 'text-red' : 'text-green']" class="d-inline-flex font-11">
+          {{timeConsume?.tag?.change.toString().replace('-' , '') | splitDigit }} دقیقه
+          <img [src]="timeConsume?.tag?.change  < 0 ? iconPath + 'down.svg' : iconPath + 'up.svg' " class="pr-1">
+        </span>
+      </div>
+    </div>
+
+    <div class="window cursor-d ">
+      <!-- icon -->
+      <img [src]="iconPath + 'vid.svg'" width="32px">
+      <!-- title -->
+      <div class="text-black window-title"> هر ویدیو </div>
+      <!-- details -->
+      <div class="window-details">
+        <span class="text-black font-13"> 54 دقیقه</span>
+        <span class="d-inline-flex font-11 text-red">
+          3 دقیقه
+          <img [src]=" iconPath + 'down.svg'  " class="pr-1">
+        </span>
+      </div>
+    </div>
+
+    <div class="window cursor-d ">
+      <!-- icon -->
+      <img [src]="iconPath + 'monitor.svg'" width="32px">
+      <!-- title -->
+      <div class="text-black window-title"> هر تولید کننده محتوا </div>
+      <!-- details -->
+      <div class="window-details">
+        <span class="text-black font-13"> {{timeConsume?.cp?.time | splitDigit}} دقیقه</span>
+        <span [ngClass]="[timeConsume?.tag?.change < 0 ? 'text-red' : 'text-green']" class="d-inline-flex font-11">
+          {{timeConsume?.cp?.change.toString().replace('-' , '') | splitDigit }} دقیقه
+          <img [src]="timeConsume?.cp?.change  < 0 ? iconPath + 'down.svg' : iconPath + 'up.svg' " class="pr-1">
+        </span>
+      </div>
+    </div>
+
+    <div class="window cursor-d ">
+      <!-- icon -->
+      <img [src]="iconPath + 'monitor.svg'" width="32px">
+      <!-- title -->
+      <div class="text-black window-title"> هر تولید کننده محتوا </div>
+      <!-- details -->
+      <div class="window-details">
+        <span class="text-black font-13"> {{timeConsume?.cp?.time | splitDigit}} دقیقه</span>
+        <span [ngClass]="[timeConsume?.tag?.change < 0 ? 'text-red' : 'text-green']" class="d-inline-flex font-11">
+          {{timeConsume?.cp?.change.toString().replace('-' , '') | splitDigit }} دقیقه
+          <img [src]="timeConsume?.cp?.change  < 0 ? iconPath + 'down.svg' : iconPath + 'up.svg' " class="pr-1">
+        </span>
+      </div>
+    </div>
+
+  </div>
+  <!-- #end left window -->
+
+  <!-- #start left window -->
+  <div class="left-windows windows bg-white shadow-x cursor-d">
+
+    <!-- #start window header -->
+    <div class="window-header">
+      <img class="mb-3" [src]="iconPath + 'keyword.svg'" width="32px">
+      <span class="text-black font-12 mb-2 d-block"> 10 کلمه کلیدی برتر</span>
+    </div>
+    <!-- #end window header -->
+
+    <div *ngFor="let keyword of keywords ; let index = index">
+      <div class="pr-3 d-flex align-items-center" style="margin: 7px 0;">
+        <span class="indexes font-12 d-inline-flex justify-content-center align-items-center ">{{index}}</span>
+        <span class="text-dark font-12 mr-2">
+          {{keyword}}
+        </span>
+      </div>
+
+    </div>
+
+  </div>
+  <!-- #end left window -->
+
+</div>

@@ -2,14 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { ManageDataService } from 'src/app/services/manage-data-service';
 import { environment } from 'src/environments/environment';
 @Component({
-  selector: 'app-first-row-boxes',
-  templateUrl: './first-row-boxes.component.html',
-  styleUrls: ['./first-row-boxes.component.scss']
+  selector: 'app-second-row-boxes',
+  templateUrl: './second-row-boxes.component.html',
+  styleUrls: ['./second-row-boxes.component.scss']
 })
-export class FirstRowBoxesComponent implements OnInit {
-  usersData: any = [];
-  networkData: any = [];
-  iconPath = environment.iconPath;
+export class SecondRowBoxesComponent implements OnInit {
+  keywords : any = [];
+  timeConsume : any = [];
+  iconPath = environment.iconPath
   constructor(
     private manageDataService: ManageDataService
   ) { }
@@ -24,8 +24,8 @@ export class FirstRowBoxesComponent implements OnInit {
         this.checkDataStatusAndSetData()
       }, 200);
     } else {
-      this.usersData = this.manageDataService.getUsers();
-      this.networkData = this.manageDataService.getNetwork()
+       this.keywords = this.manageDataService.getKeywords();
+       this.timeConsume = this.manageDataService.getTimeConsume()
     }
   }
 

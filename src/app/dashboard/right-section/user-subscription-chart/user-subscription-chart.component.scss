@@ -1,0 +1,11 @@
+.main-chart-wrapper {
+    width: 47%;
+    margin-left: 20px;
+}
+
+@media only screen and(max-width: 1255px) {
+    .main-chart-wrapper {
+        width: 100%;
+        margin-left: 0;
+    }
+}

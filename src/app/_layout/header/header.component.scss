@@ -1,3 +1,7 @@
+header {
+    top: 0;
+    z-index: 9999
+}
 .header-container {
     background: #e5e5e5;
     border-bottom: 1.5px solid #b0b0b0;
@@ -15,6 +19,7 @@
 .header-title {
     width: 260px;
     h2 {
+        font-family: Kalameh;
         top: 4px;
         font-size: 28px;
     }

@@ -7,12 +7,20 @@
 @import "~ngx-bootstrap/datepicker/bs-datepicker";
 
 //@import '/src/assets/fonts/font-face.scss' ;
+
+@font-face {
+	font-family: Kalameh;
+	font-style: normal;
+	font-weight: 100; 
+	src:url('./assets/fonts/KalamehWeb-Regular.woff') format('woff'),   	
+}
+
 @font-face {
 	font-family: IRANSansX;
 	font-style: normal;
 	font-weight: 100; 
 	src:url('./assets/fonts/woff/IRANSansX-Thin.woff') format('woff'),   
-	url('/src/assets/fonts/woff/IRANSansX-Thin.woff2') format('woff2'),   ;		
+	url('/src/assets/fonts/woff2/IRANSansX-Thin.woff2') format('woff2');		
 }
 
 @font-face {
@@ -98,14 +106,12 @@ a:hover {
 .cursor-p {
 	cursor: pointer;
 }
-
 .cursor-d {
 	cursor: default;
 }
 .text-muted {
 	color: #949494 !important; 
 }
-
 .bg-orange {
 	background-color: #FCE9E6 ;
 }
@@ -136,3 +142,23 @@ a:hover {
 .font-14 {
 	font-size: 14px;
 }
+
+/* width */
+::-webkit-scrollbar {
+	width: 4px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+	background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+	background: #FF5C0B; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+	background: #888; 
+  }

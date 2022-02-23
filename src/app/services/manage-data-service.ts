@@ -11,15 +11,16 @@ export class ManageDataService {
 
     env = environment;
     data: any;
-    dataStatus = false
+    dataStatus: boolean = false;
     getDataAndSetStatus() {
         this.mainDataHttpService.getData().then(
             res => {
                 console.log(res)
                 let _data: any = res
                 this.data = _data;
-                this.dataStatus = true
-            }
+                this.dataStatus = true;
+            },
+            err => { console.log(err) }
         )
     }
 
@@ -32,5 +33,20 @@ export class ManageDataService {
     }
     getTops() {
         return this.data.top10
+    }
+    getKeywords() {
+        return this.data.keywords
+    }
+    getTimeConsume() {
+        return this.data.time_consume
+    }
+    getDailyReports() {
+        return this.data.daily_report
+    }
+    getSaleReport() {
+        return this.data.sale_report
+    }
+    getIncomeCompair() {
+        return this.data.income_compare_report
     }
 }

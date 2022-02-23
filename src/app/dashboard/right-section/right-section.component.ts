@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./right-section.component.scss']
 })
 export class RightSectionComponent implements OnInit {
-
+  
   constructor() { }
 
   ngOnInit(): void {

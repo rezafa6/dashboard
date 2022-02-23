@@ -1,0 +1,38 @@
+@import url('../first-row-boxes/first-row-boxes.component.scss');
+
+.windows {
+    height: auto;
+}
+
+.time-cosumes {
+    .window:nth-child(2) , .window:nth-child(3) {
+        border-top: 1px solid #E8E8E8; 
+    }
+    .window:nth-child(4) , .window:nth-child(5) {
+        border-top: 1px solid #E8E8E8; 
+    }
+    .window:nth-child(3) , .window:nth-child(5) {
+        border-left: 1px solid #E8E8E8; 
+    }
+}
+.left-windows {
+    padding: 17px;
+}
+.indexes {
+    color: #949494;
+    height: 24px;
+    width: 24px;
+    border-radius: 5px;
+    padding: 3px, 6px, 3px, 6px;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+@media only screen and(max-width: 1255px) {
+    .main-window-wrapper {
+      flex-wrap: wrap;
+      width: 100%;
+    }
+    .windows  {
+      width: 100%;
+    }
+  }

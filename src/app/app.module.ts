@@ -12,8 +12,13 @@ import { LeftSectionComponent } from './dashboard/left-section/left-section.comp
 import { RightSectionComponent } from './dashboard/right-section/right-section.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { FirstRowBoxesComponent } from './dashboard/right-section/first-row-boxes/first-row-boxes.component';
-import { SplitDigitPipe } from './pipe/split-digits';
+import { SecondRowBoxesComponent } from './dashboard/right-section/second-row-boxes/second-row-boxes.component';
 // pipes
+import { SplitDigitPipe } from './pipe/split-digits';
+import { HighchartsChartModule } from 'highcharts-angular';
+import { DailyChartComponent } from './dashboard/right-section/daily-chart/daily-chart.component';
+import { UserSubscriptionChartComponent } from './dashboard/right-section/user-subscription-chart/user-subscription-chart.component';
+import { CompairUsersChartComponent } from './dashboard/right-section/compair-users-chart/compair-users-chart.component';
 
 @NgModule({
   declarations: [
@@ -25,13 +30,19 @@ import { SplitDigitPipe } from './pipe/split-digits';
     LeftSectionComponent,
     DashboardComponent,
     FirstRowBoxesComponent,
-    SplitDigitPipe
+    SplitDigitPipe,
+    SecondRowBoxesComponent,
+    DailyChartComponent,
+    UserSubscriptionChartComponent,
+    CompairUsersChartComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    HighchartsChartModule
   ],
   providers: [],
   bootstrap: [AppComponent]
