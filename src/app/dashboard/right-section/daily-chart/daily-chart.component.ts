@@ -1,6 +1,7 @@
 import { Component, OnInit , ViewEncapsulation } from '@angular/core';
 import * as Highcharts from 'highcharts';
 import { ManageDataService } from 'src/app/services/manage-data-service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-daily-chart',
@@ -11,7 +12,7 @@ import { ManageDataService } from 'src/app/services/manage-data-service';
 export class DailyChartComponent implements OnInit {
 
   constructor(private manageDataService: ManageDataService) {}
-  
+  iconPath = environment.iconPath;
   dailyReport: any = [];
   dates: any [] = [];
   values: any [] = [];
@@ -19,7 +20,6 @@ export class DailyChartComponent implements OnInit {
   chartOptions!: Highcharts.Options 
 
   ngOnInit(): void {
-    this.manageDataService.getDataAndSetStatus()
     this.checkDataStatusAndSetData()
   }
   checkDataStatusAndSetData() {
@@ -39,6 +39,7 @@ export class DailyChartComponent implements OnInit {
     this.chartOptions = {
       series: [{
         data: [...this.values],
+        name : 'کاربر',
         type: 'column',
         colorAxis: '#000000',
           pointPadding: 0,
@@ -62,13 +63,6 @@ export class DailyChartComponent implements OnInit {
           "fontFamily" : 'IranSansX' , 'color' : '#263238'
         }
       },
-      // legend: {
-      //   align: 'center',
-      //   verticalAlign: 'bottom',
-      //   itemStyle : {
-      //     "display": "none"
-      //   }
-      // },
       subtitle: {
         align: 'right',
         text: 'زیر عنوان',

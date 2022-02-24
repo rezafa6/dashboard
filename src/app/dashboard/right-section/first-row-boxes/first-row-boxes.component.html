@@ -1,11 +1,15 @@
 <div class="d-flex main-window-wrapper">
-  
+
+  <!-- #start skeleton loading -->
+  <div class="loading-wrapper" *ngIf="loading">
+    <app-box-loading></app-box-loading>
+  </div>
+  <!-- #end skeleton loading -->
+
   <!-- #start right window -->
-  <div class="right-windows windows bg-white shadow-x p-3 ">
-
+  <div class="right-windows windows bg-white shadow-x p-3 " *ngIf="!loading">
     <!-- #start windows -->
-
-    <div class="window cursor-d ">
+    <div class="window cursor-d">
       <!-- icon -->
       <img [src]="iconPath + 'android.svg'" width="32px">
       <!-- title -->
@@ -13,8 +17,7 @@
       <!-- details -->
       <div class="window-details">
         <span class="text-black font-14"> {{usersData.android?.number | splitDigit}}</span>
-        <span [ngClass]="[usersData.android?.change < 0 ? 'text-red' : 'text-green']" 
-        class="d-inline-flex font-11">
+        <span [ngClass]="[usersData.android?.change < 0 ? 'text-red' : 'text-green']" class="d-inline-flex font-11">
           {{usersData.android?.change.toString().replace('-' , '') | splitDigit }}
           <img [src]="usersData.android?.change  < 0 ? iconPath + 'down.svg' : iconPath + 'up.svg' " class="pr-1">
         </span>
@@ -29,8 +32,7 @@
       <!-- details -->
       <div class="window-details ">
         <span class="text-black font-14"> {{usersData.all?.number | splitDigit}}</span>
-        <span [ngClass]="[usersData.all?.change < 0 ? 'text-red' : 'text-green']"
-         class="d-inline-flex font-11">
+        <span [ngClass]="[usersData.all?.change < 0 ? 'text-red' : 'text-green']" class="d-inline-flex font-11">
           {{usersData.all?.change.toString().replace('-' , '') | splitDigit}}
           <img [src]="usersData.all?.change  < 0 ? iconPath + 'down.svg' : iconPath + 'up.svg' " class="pr-1">
         </span>
@@ -45,8 +47,7 @@
       <!-- details -->
       <div class="window-details">
         <span class="text-black font-14"> {{usersData.ios?.number | splitDigit}}</span>
-        <span [ngClass]="[usersData.ios?.change < 0 ? 'text-red' : 'text-green']" 
-        class="d-inline-flex font-11">
+        <span [ngClass]="[usersData.ios?.change < 0 ? 'text-red' : 'text-green']" class="d-inline-flex font-11">
           {{usersData.ios?.change.toString().replace('-' , '') | splitDigit }}
           <img [src]="usersData.ios?.change  < 0 ? iconPath + 'down.svg' : iconPath + 'up.svg' " class="pr-1">
         </span>
@@ -61,8 +62,7 @@
       <!-- details -->
       <div class="window-details ">
         <span class="text-black font-14"> {{usersData.web?.number | splitDigit}}</span>
-        <span [ngClass]="[usersData.web?.change < 0 ? 'text-red' : 'text-green']" 
-        class="d-inline-flex font-11">
+        <span [ngClass]="[usersData.web?.change < 0 ? 'text-red' : 'text-green']" class="d-inline-flex font-11">
           {{usersData.web?.change.toString().replace('-' , '') | splitDigit }}
           <img [src]="usersData.web?.change  < 0 ? iconPath + 'down.svg' : iconPath + 'up.svg' " class="pr-1">
         </span>
@@ -73,45 +73,51 @@
   </div>
   <!-- #end left window -->
 
-    <!-- #start left window -->
-    <div class="left-windows windows bg-white shadow-x cursor-d p-3 ">
+  <!-- #start skeleton loading -->
+  <div class="loading-wrapper" *ngIf="loading">
+    <app-box-loading></app-box-loading>
+  </div>
+  <!-- #end skeleton loading -->
 
-      <!-- #start window header -->
-      <div class="window-header">
-        <img class="mb-3" [src]="iconPath + 'network.svg'" width="32px">
+  <!-- #start left window -->
+  <div class="left-windows windows bg-white shadow-x cursor-d p-3 " *ngIf="!loading">
 
-        <span class="text-black font-12 mb-2 d-block"> مجموع مصرف شبکه </span>
+    <!-- #start window header -->
+    <div class="window-header">
+      <img class="mb-3" [src]="iconPath + 'network.svg'" width="32px">
 
-        <span class="mb-2 font-14 d-block"> {{networkData.all | splitDigit}} گیگابایت </span>
-      </div>
-      <!-- #end window header -->
+      <span class="text-black font-12 mb-2 d-block"> مجموع مصرف شبکه </span>
 
-      <!-- #start windows -->
-
-      <div class="window cursor-d">
-        <!-- icon -->
-        <img [src]="iconPath + 'other-nets.svg'" width="32px">
-        <!-- title -->
-        <div class="text-black window-title font-12 ">غیر ایرانسل</div>
-        <!-- details -->
-        <div class="window-details">
-          <span class="text-black font-12"> {{networkData.other | splitDigit}} گیگابایت</span>
-        </div>
-      </div>
-  
-      <div class="window cursor-d">
-        <!-- icon -->
-        <img [src]="iconPath + 'irancell.svg'" width="32px">
-        <!-- title -->
-        <div class="text-black window-title font-12 ">ایرانسل</div>
-        <!-- details -->
-        <div class="window-details">
-          <span class="text-black font-12"> {{networkData.irancell | splitDigit}} گیگابایت</span>
-        </div>
-      </div>
-      <!-- #end windows -->
-  
+      <span class="mb-2 font-14 d-block"> {{networkData.all | splitDigit}} گیگابایت </span>
     </div>
-    <!-- #end left window -->
-  
+    <!-- #end window header -->
+
+    <!-- #start windows -->
+
+    <div class="window cursor-d">
+      <!-- icon -->
+      <img [src]="iconPath + 'other-nets.svg'" width="32px">
+      <!-- title -->
+      <div class="text-black window-title font-12 ">غیر ایرانسل</div>
+      <!-- details -->
+      <div class="window-details">
+        <span class="text-black font-12"> {{networkData.other | splitDigit}} گیگابایت</span>
+      </div>
+    </div>
+
+    <div class="window cursor-d">
+      <!-- icon -->
+      <img [src]="iconPath + 'irancell.svg'" width="32px">
+      <!-- title -->
+      <div class="text-black window-title font-12 ">ایرانسل</div>
+      <!-- details -->
+      <div class="window-details">
+        <span class="text-black font-12"> {{networkData.irancell | splitDigit}} گیگابایت</span>
+      </div>
+    </div>
+    <!-- #end windows -->
+
+  </div>
+  <!-- #end left window -->
+
 </div>

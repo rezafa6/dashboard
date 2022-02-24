@@ -1,5 +1,22 @@
 
 @import url('../second-row-boxes/second-row-boxes.component.scss');
-.highcharts-legend-item{
-    display: none !important;
+
+.daily-chart {
+    .highcharts-legend-item{
+        display: none !important;
+    }
+}
+
+.report-title {
+    top: 25px;
+    left: 25px;
+    z-index: 9999;
+}
+.windows {
+    width: 97.5%;
+}
+@media only screen and (max-width: 1200px) {  
+    .windows {
+        width: 100%;
+    }
 }

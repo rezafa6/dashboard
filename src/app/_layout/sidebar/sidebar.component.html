@@ -1,9 +1,7 @@
 <!-- #start sidebar -->
-<div class="sidebar h-100 position-fixed bg-white"
+<div class="sidebar position-fixed bg-white"
 [ngClass]="[sidebarState ? 'open-side-bar': 'close-side-bar']"
 >
-
-
     <!-- toggle sidebar for small devices  -->
     <div class="position-fixed sidebar-tgl"
     [ngClass]="{'is-close-btn' : !sidebarState }"
@@ -26,14 +24,12 @@
     <div class="group-links" *ngFor="let sidebarItem of sidebarItems">
         <span class="text-muted d-inline-block cursor-d list-title"> {{sidebarItem.title}} </span>
         <div class="sidebar-links">
-
             <a class="d-block text-black" href="#" *ngFor="let links of sidebarItem.links">
                 <!-- link icon -->
                 <img [src]="iconPath +links.icon " alt="link-icon" class="pl-3">
                 <!-- link title -->
                 <span class="link-title">{{links.title}}</span>
             </a>
-
         </div>
     </div>
     <!-- #end sidebar items -->

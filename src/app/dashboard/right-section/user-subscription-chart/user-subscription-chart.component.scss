@@ -2,6 +2,25 @@
     width: 47%;
     margin-left: 20px;
 }
+.subs-chart {
+    .highcharts-legend-item{
+        display: none !important;
+    }
+}
+
+
+@media only screen and(max-width: 1505px) {
+    .main-chart-wrapper {
+        margin-left: 16px;
+    }
+}
+
+@media only screen and(max-width: 1263px) {
+    .main-chart-wrapper {
+        width: 100%;
+        margin-left: 13px;
+    }
+}
 
 @media only screen and(max-width: 1255px) {
     .main-chart-wrapper {

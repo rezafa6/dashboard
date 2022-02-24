@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import * as Highcharts from 'highcharts';
 import { ManageDataService } from 'src/app/services/manage-data-service';
-
+import { environment } from 'src/environments/environment';
 @Component({
   selector: 'app-compair-users-chart',
   templateUrl: './compair-users-chart.component.html',
@@ -9,16 +9,16 @@ import { ManageDataService } from 'src/app/services/manage-data-service';
   encapsulation: ViewEncapsulation.None
 })
 export class CompairUsersChartComponent implements OnInit {
+  iconPath = environment.iconPath
   incomeCompair: any = [];
   premium: any[] = [];
   shared: any[] = [];
   dates: any[] = []
   Highcharts: typeof Highcharts = Highcharts;
-  chartOptions!: Highcharts.Options
+  chartOptions!: Highcharts.Options;
   constructor(private manageDataService: ManageDataService) { }
 
   ngOnInit(): void {
-    this.manageDataService.getDataAndSetStatus()
     this.checkDataStatusAndSetData()
   }
 
@@ -29,11 +29,10 @@ export class CompairUsersChartComponent implements OnInit {
       }, 200);
     } else {
       this.incomeCompair = this.manageDataService.getIncomeCompair();
-      console.warn(this.incomeCompair)
       this.premium = this.incomeCompair.premium;
       this.shared = this.incomeCompair.shared;
       this.dates = this.incomeCompair.dates;
-      this.initChart()
+      this.initChart();
     }
   }
   initChart() {
@@ -60,18 +59,22 @@ export class CompairUsersChartComponent implements OnInit {
           "fontFamily": 'IranSansX ', 'color': '#607D8B', 'fontSize': '12px'
         }
       },
+
       legend: {
-        x: 250,
-        y: 100,
+        x: 20,
+        y: 20,
         floating: true,
-        borderWidth: 1,
-        shadow: false
+        align: 'center',
+        verticalAlign: 'bottom',
+        itemStyle: {
+          "display": "block",
+          'fontSize': '10px'
+        }
       },
       xAxis: {
         categories: [...this.dates], gridLineWidth: 0,
         title: {
           useHTML: true,
-          text: "<span class='org-circle rounded-circle'></span>"
         }, crosshair: true
       },
       yAxis: {
@@ -110,7 +113,7 @@ export class CompairUsersChartComponent implements OnInit {
         name: ' پریمیوم',
         type: 'column',
         label: {
-          enabled: false
+          enabled: true
         },
         pointWidth: 20,
         pointPadding: 0,
@@ -120,7 +123,5 @@ export class CompairUsersChartComponent implements OnInit {
       }
       ],
     };
-
-
   }
 }

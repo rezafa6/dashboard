@@ -1,0 +1,21 @@
+.box-sklt {
+    height: 150px;
+    width: 49%;
+    border-radius: 4px;
+    background-color: #e7e7e7;
+    margin: 6px auto;
+    position: relative;
+    overflow: hidden;
+  }
+ .box-sklt::after {
+   content: '';
+   position: absolute;
+   height: 100%;
+   width: 100%;
+   background: linear-gradient(90deg , transparent , rgba(255,255,255,.4) , transparent);
+   transform: translateX(-100%);
+   animation: 0.8s boxAnims infinite;
+ }
+ @keyframes boxAnims {
+    100% {transform: translateX(100%);}
+  }

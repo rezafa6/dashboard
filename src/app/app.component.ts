@@ -8,7 +8,7 @@ import { ManageDataService } from './services/manage-data-service';
 })
 export class AppComponent implements OnInit {
   constructor(private manageDataService: ManageDataService) {}
-lg = false
+
   ngOnInit(): void {
     this.manageDataService.getDataAndSetStatus()
   }

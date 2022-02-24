@@ -5,17 +5,16 @@ import { MainDataHttpService } from './http-service';
 @Injectable({ providedIn: 'root' })
 
 export class ManageDataService {
-
-    constructor(
-        private mainDataHttpService: MainDataHttpService) { }
-
     env = environment;
     data: any;
     dataStatus: boolean = false;
+    constructor(
+        private mainDataHttpService: MainDataHttpService
+    ) { }
+
     getDataAndSetStatus() {
         this.mainDataHttpService.getData().then(
             res => {
-                console.log(res)
                 let _data: any = res
                 this.data = _data;
                 this.dataStatus = true;
@@ -24,15 +23,11 @@ export class ManageDataService {
         )
     }
 
-
     getUsers() {
         return this.data.users
     }
     getNetwork() {
         return this.data.network
-    }
-    getTops() {
-        return this.data.top10
     }
     getKeywords() {
         return this.data.keywords
@@ -48,5 +43,14 @@ export class ManageDataService {
     }
     getIncomeCompair() {
         return this.data.income_compare_report
+    }
+    getTopVideos() {
+        return this.data.top10.vod
+    }
+    getTopGames() {
+        return this.data.top10.game
+    }
+    getTopApps() {
+        return this.data.top10.app
     }
 }

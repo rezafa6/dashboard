@@ -1,20 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { ManageDataService } from 'src/app/services/manage-data-service';
-import { environment } from 'src/environments/environment';
+
 @Component({
-  selector: 'app-first-row-boxes',
-  templateUrl: './first-row-boxes.component.html',
-  styleUrls: ['./first-row-boxes.component.scss']
+  selector: 'app-top-apps',
+  templateUrl: './top-apps.component.html',
+  styleUrls: ['./top-apps.component.scss']
 })
-export class FirstRowBoxesComponent implements OnInit {
-  usersData: any ;
-  networkData: any ;
-  iconPath = environment.iconPath;
-  loading: boolean = true
+export class TopAppsComponent implements OnInit {
+  topApps: any = [];
+  currentTab : number = 1;
+  loading: boolean = true;
   constructor(
     private manageDataService: ManageDataService
   ) { }
-
+  
   ngOnInit(): void {
     this.checkDataStatusAndSetData()
   }
@@ -26,8 +25,7 @@ export class FirstRowBoxesComponent implements OnInit {
         this.checkDataStatusAndSetData()
       }, 200);
     } else {
-      this.usersData = this.manageDataService.getUsers();
-      this.networkData = this.manageDataService.getNetwork();
+      this.topApps = this.manageDataService.getTopApps()
       this.loading = false
     }
   }

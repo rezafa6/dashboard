@@ -3,6 +3,8 @@
     transition: 0.3s;
     padding: 10px 21px;
     border-left: 1.5px solid #b0b0b0;
+    height: 100%;
+    z-index: 9999;
     .sidebar-header {
         border-radius: 10px;
         padding: 12px;
@@ -31,7 +33,6 @@
         }
     }
 }
-
 .sidebar-tgl {
     transition: 0.3s;
     right: 50px;
@@ -44,6 +45,9 @@
 
 @media only screen and (max-width: 768px) {
 
+   .sidebar {
+      top: 0;
+   }
     .open-side-bar {
         right: 0;
     }
@@ -55,10 +59,9 @@
         right: 0;
     }
 
-
     .sidebar-tgl {
         display: inline-block;
-       transform: rotate(-180deg);
+        transform: rotate(-180deg);
     }
     .sidebar {
         width: 70px;

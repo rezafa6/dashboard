@@ -3,7 +3,7 @@ header {
     z-index: 9999
 }
 .header-container {
-    background: #e5e5e5;
+    background: #ededed;
     border-bottom: 1.5px solid #b0b0b0;
     padding-left: 30px;
     height: 64px;
@@ -34,7 +34,7 @@ header {
     }
 }
 
-@media only screen and (max-width: 550px) {
+@media only screen and (max-width: 580px) {
     .header-container {
         height: auto;
         flex: wrap !important;

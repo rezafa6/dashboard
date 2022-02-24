@@ -9,7 +9,8 @@ import { environment } from 'src/environments/environment';
 export class SecondRowBoxesComponent implements OnInit {
   keywords : any = [];
   timeConsume : any = [];
-  iconPath = environment.iconPath
+  iconPath = environment.iconPath;
+  loading: boolean = true;
   constructor(
     private manageDataService: ManageDataService
   ) { }
@@ -19,13 +20,15 @@ export class SecondRowBoxesComponent implements OnInit {
   }
 
   checkDataStatusAndSetData() {
+    this.loading = true;
     if (!this.manageDataService.dataStatus) {
       setTimeout(() => {
         this.checkDataStatusAndSetData()
       }, 200);
     } else {
        this.keywords = this.manageDataService.getKeywords();
-       this.timeConsume = this.manageDataService.getTimeConsume()
+       this.timeConsume = this.manageDataService.getTimeConsume();
+       this.loading = false
     }
   }
 

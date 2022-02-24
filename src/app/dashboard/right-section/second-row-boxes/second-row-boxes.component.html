@@ -1,7 +1,13 @@
 <div class="d-flex main-window-wrapper">
 
+  <!-- #start skeleton loading -->
+  <div class="loading-wrapper" *ngIf="loading">
+    <app-box-loading></app-box-loading>
+  </div>
+  <!-- #end skeleton loading -->
+
   <!-- #start right window -->
-  <div class="right-windows time-cosumes windows bg-white shadow-x p-3 ">
+  <div class="right-windows time-cosumes windows bg-white shadow-x p-3 " *ngIf="!loading">
 
     <div class="window-header">
       <!-- icon -->
@@ -84,24 +90,31 @@
   </div>
   <!-- #end left window -->
 
+     <!-- #start skeleton loading -->
+     <div class="loading-wrapper" *ngIf="loading">
+      <app-box-loading></app-box-loading>
+    </div>
+    <!-- #end skeleton loading -->
+    
   <!-- #start left window -->
-  <div class="left-windows windows bg-white shadow-x cursor-d">
+  <div class="left-windows windows bg-white shadow-x" *ngIf="!loading">
 
     <!-- #start window header -->
-    <div class="window-header">
+    <div class="window-header cursor-d">
       <img class="mb-3" [src]="iconPath + 'keyword.svg'" width="32px">
       <span class="text-black font-12 mb-2 d-block"> 10 کلمه کلیدی برتر</span>
     </div>
     <!-- #end window header -->
 
     <div *ngFor="let keyword of keywords ; let index = index">
-      <div class="pr-3 d-flex align-items-center" style="margin: 7px 0;">
-        <span class="indexes font-12 d-inline-flex justify-content-center align-items-center ">{{index}}</span>
+      <div class="pr-3 d-flex align-items-center cursor-p" style="margin: 7px 0;">
+        <span class="indexes font-12 d-inline-flex justify-content-center align-items-center ">
+          {{index+1}}
+        </span>
         <span class="text-dark font-12 mr-2">
           {{keyword}}
         </span>
       </div>
-
     </div>
 
   </div>

@@ -1,7 +1,11 @@
-<div class=" main-window-wrapper">
+<div class="main-window-wrapper daily-chart position-relative">
 
-    <!-- #start right window -->
-    <div class=" windows bg-white shadow-x p-3  " style="width: 97.5%;">
+    <div class="report-title position-absolute cursor-d">
+        <span class="text-orange font-14">  تعداد کاربر</span>
+        <img [src]="iconPath + 'org-arr.svg'" class="mr-1">
+    </div>
+
+    <div class="windows bg-white shadow-x p-3">
             <highcharts-chart [Highcharts]="Highcharts" [options]="chartOptions"
                 style="width: 100%; height: 250px; display: block;">
             </highcharts-chart>

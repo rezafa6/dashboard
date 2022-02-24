@@ -9,34 +9,33 @@ export class SidebarComponent implements OnInit {
   iconPath = environment.iconPath;
   sidebarState: boolean = true
   constructor() { }
-  sidebarItems : any[] = [
+
+  // sidebar links and icons
+  sidebarItems: any[] = [
     {
       title: 'کاربران سامانه',
-      links : [
-      {title: 'کاربران والدین' , icon: 'people.svg'},
-      {title: ' تامین کنندگان محتوا' , icon: 'monitor-recorder.svg'},
-      {title: ' ناظران محتوا' , icon: 'security-user.svg'},
+      links: [
+        { title: 'کاربران والدین', icon: 'people.svg' },
+        { title: ' تامین کنندگان محتوا', icon: 'monitor-recorder.svg' },
+        { title: ' ناظران محتوا', icon: 'security-user.svg' },
       ]
     },
 
     {
       title: 'بیشتر',
-      links : [
-      {title: ' مدیران / نقش ها' , icon: 'user.svg'},
-      {title: 'تگ‌های محتوا' , icon: 'hashtag.svg'},
-      {title: 'تعرفه‌ها' , icon: 'money-4.svg'},
-      {title: 'تراکنش‌ها' , icon: 'dollar-circle.svg'},
-      {title: 'پیامک‌های ارسالی' , icon: 'message-text.svg'},
-      {title: 'لاگ فعالیت‌ها' , icon: 'activity.svg'},
-      {title: 'تنظیمات' , icon: 'setting-2.svg'},
+      links: [
+        { title: ' مدیران / نقش ها', icon: 'user.svg' },
+        { title: 'تگ‌های محتوا', icon: 'hashtag.svg' },
+        { title: 'تعرفه‌ها', icon: 'money-4.svg' },
+        { title: 'تراکنش‌ها', icon: 'dollar-circle.svg' },
+        { title: 'پیامک‌های ارسالی', icon: 'message-text.svg' },
+        { title: 'لاگ فعالیت‌ها', icon: 'activity.svg' },
+        { title: 'تنظیمات', icon: 'setting-2.svg' },
       ]
     }
   ]
   ngOnInit(): void {
   }
 
-  toggleSidebar() {
-
-  }
 
 }

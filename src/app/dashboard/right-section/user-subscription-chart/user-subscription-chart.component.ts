@@ -18,7 +18,6 @@ export class UserSubscriptionChartComponent implements OnInit {
   Highcharts: typeof Highcharts = Highcharts; 
   chartOptions !: Highcharts.Options
   ngOnInit(): void {
-    this.manageDataService.getDataAndSetStatus()
     this.checkDataStatusAndSetData()
   }
   checkDataStatusAndSetData() {
@@ -39,11 +38,14 @@ export class UserSubscriptionChartComponent implements OnInit {
 
   initChart() {
     this.chartOptions = {
-      series: [{
+      series: [
+        {
         data: [...this.values],
         type: 'bar',
         colorAxis: '#000000',
-      }],
+      },
+    
+    ],
       chart: {
         style: {
           fontFamily: 'IranSansX',
@@ -52,7 +54,8 @@ export class UserSubscriptionChartComponent implements OnInit {
       credits: {
         enabled: false
       },
-      colors: ['#ff640b', '#fa8039', '#fa8846'],
+      colors: ['#f77331', '#fa8039', '#fa8846'],
+      
       title: {
         align: 'right',
         text: '  نمودار فروش اشتراک',

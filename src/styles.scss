@@ -81,7 +81,7 @@
 // general styles
 body , html {
     height: 100%;
-    background-color: #e5e5e5 ;
+    background-color: #efefef ;
 	overflow-x: hidden;
 }
 body {
@@ -163,15 +163,4 @@ a:hover {
 	display: block;
 	margin-top: 4px;
 }
-.org-circle::before {
-	content: 'اشتراکی';
-	position: absolute;
-	font-size: 11px;
-	top : 15px;
-	right: 4px;
 
-}
-.black-circle {
-	@extend .org-circle;
-	background-color: #1a1a1a ;
-}

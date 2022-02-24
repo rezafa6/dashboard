@@ -1,6 +1,11 @@
 .main-chart-wrapper {
     width: 47%;
 }
+.report-badge {
+    top: 33px;
+    left: 15px;
+    z-index: 999;
+}
 @media only screen and(max-width: 1255px) {
     .main-chart-wrapper {
         width: 100%;

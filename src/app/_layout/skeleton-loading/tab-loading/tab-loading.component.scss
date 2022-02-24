@@ -1,0 +1,20 @@
+.line-sklt {
+    height: 400px;
+    border-radius: 4px;
+    background-color: #e7e7e7;
+    margin: 30px auto;
+    position: relative;
+    overflow: hidden;
+  }
+ .line-sklt::after {
+   content: '';
+   position: absolute;
+   height: 100%;
+   width: 100%;
+   background: linear-gradient(90deg , transparent , rgba(255,255,255,.4) , transparent);
+   transform: translateX(-100%);
+   animation: 0.8s skltanim infinite;
+ }
+ @keyframes skltanim {
+    100% {transform: translateX(100%);}
+  }

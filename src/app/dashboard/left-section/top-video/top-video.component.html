@@ -1,0 +1,47 @@
+<div class="top-items-wrapper shadow bg-white">
+    <!-- #start tab header -->
+    <div class="tabs-header mr-4 d-flex align-items-center">
+        <span class="cursor-d"> 10 ویدیوی </span>
+        <div class="tab-btns mr-3">
+            <button class="tab-button font-12" (click)="currentTab = 1" [ngClass]="{'tab-active': currentTab == 1}">
+                محبوب </button>
+            <button class="tab-button font-12 mr-2" (click)="currentTab = 2"
+                [ngClass]="{'tab-active': currentTab == 2}"> برتر </button>
+        </div>
+    </div>
+    <!-- #end tab header -->
+
+    <!-- #start tab content : most like -->
+    <div class="tab-content d-flex justify-content-center flex-wrap" *ngIf="currentTab == 1">
+        <div class="text-center inner-tab-content" *ngFor="let video of topVideos?.most_like ; let index = index">
+            <!-- #start item badget at top left -->
+            <div class="tab-item position-relative video-item mt-3 cursor-p">
+                <span
+                    class="item-badge font-12 d-inline-flex justify-content-center align-items-center text-white position-absolute">
+                    {{index + 1}}
+                </span>
+            </div>
+            <!-- #end item badget at top left -->
+            <span class="font-11">{{video.title}}</span>
+        </div>
+    </div>
+    <!-- #end tab content : most like -->
+
+    <!-- #start tab content : most viewed -->
+    <div class="tab-content d-flex justify-content-center flex-wrap" *ngIf="currentTab == 2">
+        <div class="text-center inner-tab-content" *ngFor="let video of topVideos?.most_viewed ; let index = index">
+            <!-- #start item badget at top left -->
+            <div class="tab-item position-relative video-item mt-3">
+                <span
+                    class="item-badge font-12 d-inline-flex justify-content-center align-items-center text-white position-absolute">
+                    {{index + 1}}
+                </span>
+            </div>
+            <!-- #end item badget at top left -->
+            <span class="font-11">{{video.title}}</span>
+        </div>
+    </div>
+    <!-- #end tab content : most viewed -->
+
+    <app-tab-loading *ngIf="loading"></app-tab-loading>
+</div>
