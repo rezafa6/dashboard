@@ -19,6 +19,7 @@ export class CompairUsersChartComponent implements OnInit {
   constructor(private manageDataService: ManageDataService) { }
 
   ngOnInit(): void {
+    this.initChart();
     this.checkDataStatusAndSetData()
   }
 

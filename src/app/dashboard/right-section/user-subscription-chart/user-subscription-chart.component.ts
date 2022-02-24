@@ -18,6 +18,7 @@ export class UserSubscriptionChartComponent implements OnInit {
   Highcharts: typeof Highcharts = Highcharts; 
   chartOptions !: Highcharts.Options
   ngOnInit(): void {
+    this.initChart();
     this.checkDataStatusAndSetData()
   }
   checkDataStatusAndSetData() {

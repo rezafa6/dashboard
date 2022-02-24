@@ -20,6 +20,7 @@ export class DailyChartComponent implements OnInit {
   chartOptions!: Highcharts.Options 
 
   ngOnInit(): void {
+    this.initChart();
     this.checkDataStatusAndSetData()
   }
   checkDataStatusAndSetData() {
@@ -31,7 +32,7 @@ export class DailyChartComponent implements OnInit {
       this.dailyReport = this.manageDataService.getDailyReports();
       this.dates = this.dailyReport.dates
       this.values = this.dailyReport.values
-      this.initChart()
+      this.initChart();
     }
   }
 
