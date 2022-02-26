@@ -65,7 +65,7 @@
       <!-- details -->
       <div class="window-details">
         <span class="text-black font-13"> {{timeConsume?.cp?.time | splitDigit}} دقیقه</span>
-        <span [ngClass]="[timeConsume?.tag?.change < 0 ? 'text-red' : 'text-green']" class="d-inline-flex font-11">
+        <span [ngClass]="[timeConsume?.cp?.change < 0 ? 'text-red' : 'text-green']" class="d-inline-flex font-11">
           {{timeConsume?.cp?.change.toString().replace('-' , '') | splitDigit }} دقیقه
           <img [src]="timeConsume?.cp?.change  < 0 ? iconPath + 'down.svg' : iconPath + 'up.svg' " class="pr-1">
         </span>
@@ -80,7 +80,7 @@
       <!-- details -->
       <div class="window-details">
         <span class="text-black font-13"> {{timeConsume?.cp?.time | splitDigit}} دقیقه</span>
-        <span [ngClass]="[timeConsume?.tag?.change < 0 ? 'text-red' : 'text-green']" class="d-inline-flex font-11">
+        <span [ngClass]="[timeConsume?.cp?.change < 0 ? 'text-red' : 'text-green']" class="d-inline-flex font-11">
           {{timeConsume?.cp?.change.toString().replace('-' , '') | splitDigit }} دقیقه
           <img [src]="timeConsume?.cp?.change  < 0 ? iconPath + 'down.svg' : iconPath + 'up.svg' " class="pr-1">
         </span>
